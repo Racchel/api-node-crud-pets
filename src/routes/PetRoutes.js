@@ -1,8 +1,9 @@
 import { Router } from 'express'
+
 import { PetController } from '../controllers/index.js'
+const petController = new PetController()
 
 const petRoutes = Router()
-const petController = new PetController()
 
 // Lista todos os pets
 petRoutes.get('/', petController.list)
