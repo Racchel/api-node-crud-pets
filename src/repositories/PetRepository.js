@@ -8,6 +8,10 @@ export default class PetRepository {
       return await pool.query('SELECT * FROM tb_pets')
    }
 
+   async findById(id) {
+      return await pool.query(`SELECT * FROM tb_pets WHERE pet_id=${id}`)
+   }
+
    async findByName(name) {
       return await pool.query(`SELECT * FROM tb_pets WHERE name='${name}'`)
    }
